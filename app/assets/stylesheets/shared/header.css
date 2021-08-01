@@ -14,8 +14,8 @@
 }
 
 .link-area {
-  font-size: 25px;
-  font-family: "Futura";
+  font-size: 26px;
+  font-family: "Futura", sans-serif;
   width: 58vw;
   height: 20vh;
   flex-wrap: wrap;
