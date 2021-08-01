@@ -1,0 +1,69 @@
+.top-page-header {
+  width: 100vw;
+  background-color: #D9D9D9;
+  display: flex;
+}
+
+.logo {
+  padding-left: 1vw;
+}
+
+.design-logo {
+  width: 20vw;
+  height: 20vh;
+}
+
+.link-area {
+  font-size: 26px;
+  font-family: "Futura", sans-serif;
+  width: 58vw;
+  height: 20vh;
+  flex-wrap: wrap;
+  padding: 7vh 0 7vh 1vw;
+}
+
+.user-nickname {
+  text-decoration: none;
+  color: white;
+}
+
+.list-link {
+  display: flex;
+  justify-content: space-between;
+  width: 58vw;
+}
+
+.post-list {
+  text-decoration: none;
+  color: white;
+}
+
+.chat-list {
+  text-decoration: none;
+  color: white;
+}
+
+.search-list {
+  text-decoration: none;
+  color: white;
+}
+
+.opinion-list {
+  text-decoration: none;
+  color: white;
+}
+
+.log-out {
+  text-decoration: none;
+  color: white;
+}
+
+.log-in {
+  text-decoration: none;
+  color: white;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: white;
+}

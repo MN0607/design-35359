@@ -1,0 +1,77 @@
+.design-top {
+  width: 100vw;
+  height: 80vh;
+  background-color: #D9D9D9;
+}
+
+.design-your-life {
+  width: 80vw;
+  height: 80vh;
+}
+
+.design-second {
+  width: 100vw;
+  display: flex;
+}
+
+.story-left {
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+  width: 100%;
+  padding: 7vh 0 0 20vw;
+}
+
+.sub-title {
+  font-size: 20px;
+  color: #D9D9D9;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.text {
+  font-size: 15px;
+  color: #D9D9D9;
+}
+
+.second-text {
+  margin-top: 5px;
+}
+
+.second-image {
+  height: 100vh;
+}
+
+.design-third {
+  display: flex;
+}
+
+.use-left {
+  width: 50vw;
+  height: 100vh;
+}
+
+.third-logo {
+  width: 30vw;
+  height: 30vw;
+}
+
+.third-banner {
+  width: 50vw;
+  height: 46vh;
+}
+
+.use-right {
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+  width: 30vw;
+  height: 100vh;
+  padding: 12vh 0 0 1vw;
+}
+
+.mal-15 {
+  margin-left: 14px;
+}
+
+.mat-15 {
+  margin-top: 15px;
+}
