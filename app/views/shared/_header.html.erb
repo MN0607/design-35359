@@ -1,0 +1,23 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class = 'top-page-header'>
+  <div class = 'logo'>
+    <%= link_to image_tag("design_logo.png", class:"design-logo"), "/" %>
+  </div>
+  <div class = 'link-area'>
+    <ul class = 'nickname-link'>
+      <li><%= link_to 'Current_user_nickname', "#", class: "user-nickname" %></li>
+    </ul>
+    <ul class = 'list-link'>
+      <li><%= link_to 'POST', "#", class: "post-list" %></li>
+      <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
+      <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
+      <li><%= link_to 'OPINION', "#", class: "opinion-list" %></li>
+      <%# if user_signed_in? %>
+        <%#= link_to 'SIGN OUT', '#', class: "log-out" %>
+      <%# else %>
+        <li><%= link_to 'LOG IN', '#', class: "log-in" %></li>
+        <li><%= link_to 'SIGN UP', '#', class: "sign-up" %></li>
+      <%# end %>
+    </ul>
+  </div>
+</header>
