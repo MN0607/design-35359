@@ -1,29 +1,49 @@
-<h2>Sign up</h2>
+<%= render "shared/header" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<%# css...stylesheet/user/registration.css%>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_with model: @user, url: user_registration_path, method: :post, class: 'registration-main', local: true do |f| %>
+<div class = 'form-wrap'>
+  <div class = 'form-left'>
+    <div class = 'title'>
+      <p>SIGN UP</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <div class = 'form-right'>
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Nickname</label>
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"English Only", maxlength:"40" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>First Name</label>
+      <%= f.text_area :first_name, class:"input-default", id:"first-name", placeholder:"English Only" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Last Name</label>
+      <%= f.text_area :last_name, class:"input-default", id:"last-name", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Email</label>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC or Mobile" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Password</label>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"Please include both letters and numbers" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Password(2nd)</label>
+      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"Please confirm your password" %>
+    </div>
+
+    <div class='register-btn'>
+      <%= f.submit "Submit" ,class:"register-gray-btn" %>
+    </div>
   </div>
+</div>
 <% end %>
-
-<%= render "users/shared/links" %>

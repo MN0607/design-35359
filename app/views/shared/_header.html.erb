@@ -12,12 +12,12 @@
       <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
       <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
       <li><%= link_to 'OPINION', "#", class: "opinion-list" %></li>
-      <%# if user_signed_in? %>
-        <%#= link_to 'SIGN OUT', '#', class: "log-out" %>
-      <%# else %>
-        <li><%= link_to 'LOG IN', '#', class: "log-in" %></li>
-        <li><%= link_to 'SIGN UP', '#', class: "sign-up" %></li>
-      <%# end %>
+      <% if user_signed_in? %>
+        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+      <% else %>
+        <li><%= link_to 'LOG IN', new_user_session_path, class: "log-in" %></li>
+        <li><%= link_to 'SIGN UP', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
     </ul>
   </div>
 </header>
