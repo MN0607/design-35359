@@ -1,0 +1,15 @@
+.second-top-page-header {
+  width: 100vw;
+  background-color: #153254;
+  display: flex;
+}
+
+.company-logo {
+  width: 20vw;
+  height: 20vh;
+}
+
+.indiv-list {
+  text-decoration: none;
+  color: white;
+}

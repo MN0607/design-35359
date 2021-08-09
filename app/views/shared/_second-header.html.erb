@@ -1,7 +1,6 @@
-<%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class = 'top-page-header'>
+<header class = 'second-top-page-header'>
   <div class = 'logo'>
-    <%= link_to image_tag("design_logo.png", class:"design-logo"), "/" %>
+    <%= link_to image_tag("company_design_logo.png", class:"company-logo"), "/" %>
   </div>
   <div class = 'link-area'>
     <ul class = 'nickname-link'>
@@ -14,7 +13,6 @@
       <% end %>
     </ul>
     <ul class = 'list-link'>
-      <li><%= link_to 'POST', "#", class: "post-list" %></li>
       <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
       <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
       <% if user_signed_in? %>
@@ -23,7 +21,7 @@
         <li><%= link_to 'LOG IN', new_user_session_path, class: "log-in" %></li>
         <li><%= link_to 'SIGN UP', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
-      <li><%= link_to 'Co.page', index_co_designs_path, class: "co-list"%></li>
+      <li><%= link_to 'Indiv.page', designs_path, class: "indiv-list"%></li>
     </ul>
   </div>
 </header>
