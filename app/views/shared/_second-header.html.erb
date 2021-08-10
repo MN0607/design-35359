@@ -4,8 +4,8 @@
   </div>
   <div class = 'link-area'>
     <ul class = 'nickname-link'>
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <% if company_signed_in? %>
+        <li><%= link_to current_company.company_name, "#", class: "user-nickname" %></li>
       <% else %>
         <div class = "user-nickname">
           <p>RICE IS DESSERT</p>
@@ -15,11 +15,11 @@
     <ul class = 'list-link'>
       <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
       <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+      <% if company_signed_in? %>
+        <li><%= link_to 'SIGN OUT', destroy_company_session_path, method: :delete, class: "log-out" %></li>
       <% else %>
-        <li><%= link_to 'LOG IN', new_user_session_path, class: "log-in" %></li>
-        <li><%= link_to 'SIGN UP', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'LOG IN', new_company_session_path, class: "log-in" %></li>
+        <li><%= link_to 'SIGN UP', new_company_registration_path, class: "sign-up" %></li>
       <% end %>
       <li><%= link_to 'Indiv.page', designs_path, class: "indiv-list"%></li>
     </ul>

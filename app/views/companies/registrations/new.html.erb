@@ -1,29 +1,71 @@
-<h2>Sign up</h2>
+<%= render "shared/second-header" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "companies/shared/error_messages", resource: resource %>
+<%# css...stylesheet/user/registration.css%>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_with model: @company, url: company_registration_path, method: :post, class: 'registration-main', local: true do |f| %>
+<div class = 'company-form-wrap'>
+  <div class = 'company-form-left'>
+    <div class = 'company-title'>
+      <p>SIGN UP</p>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <div class = 'company-form-right'>
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Company Name</label>
+      <%= f.text_area :company_name, class:"company-input-default", id:"compnay-name", placeholder:"English Only", maxlength:"40" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Postal Code</label>
+      <%= f.text_area :postal_code, class:"company-input-default", id:"postal-code", placeholder:"English Only" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class = 'form-text-wrap'>
+      <div class = 'form-text'>Prefecture</div>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"company-select-box", id:"item-prefecture"}) %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Municipality</label>
+      <%= f.text_area :municipality, class:"company-input-default", id:"municipality", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>House Number</label>
+      <%= f.text_area :house_number, class:"company-input-default", id:"house-number", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Building Name</label>
+      <%= f.text_area :building_name, class:"company-input-default", id:"building-name", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Phone Number</label>
+      <%= f.text_area :phone_number, class:"company-input-default", id:"phone-number", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Email</label>
+      <%= f.email_field :email, class:"company-input-default", id:"email", placeholder:"PC or Mobile" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Password</label>
+      <%= f.password_field :password, class:"company-input-default", id:"password", placeholder:"Please include both letters and numbers" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Password(2nd)</label>
+      <%= f.password_field :password_confirmation, class:"company-input-default", id:"password-confirmation", placeholder:"Please confirm your password" %>
+    </div>
+
+    <div class='register-btn'>
+      <%= f.submit "Submit" ,class:"register-navy-btn" %>
+    </div>
+
+
   </div>
+</div>
 <% end %>
-
-<%= render "companies/shared/links" %>
