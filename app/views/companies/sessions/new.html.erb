@@ -11,6 +11,12 @@
   </div>
 
   <div class = 'company-form-right'>
+
+    <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+    </div>
+    
     <div class = 'form-text-wrap'>
       <label class = 'form-text'>Email</label>
       <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC or Mobile" %>

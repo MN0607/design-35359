@@ -11,14 +11,27 @@
   </div>
 
   <div class = 'company-form-right'>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    
     <div class = 'form-text-wrap'>
       <label class = 'form-text'>Company Name</label>
-      <%= f.text_area :company_name, class:"company-input-default", id:"compnay-name", placeholder:"English Only", maxlength:"40" %>
+      <%= f.text_area :company_name, class:"company-input-default", id:"compnay-name", placeholder:"RiceIsDessert,Inc.", maxlength:"40" %>
     </div>
 
     <div class = 'form-text-wrap'>
-      <label class = 'form-text'>Postal Code</label>
-      <%= f.text_area :postal_code, class:"company-input-default", id:"postal-code", placeholder:"English Only" %>
+      <label class = 'form-text'>House Number</label>
+      <%= f.text_area :house_number, class:"company-input-default", id:"house-number", placeholder:"1-2-3,Ozeki" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Building Name</label>
+      <%= f.text_area :building_name, class:"company-input-default", id:"building-name", placeholder:"Japan Building 1F" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Municipality</label>
+      <%= f.text_area :municipality, class:"company-input-default", id:"municipality", placeholder:"Nishiura ku" %>
     </div>
 
     <div class = 'form-text-wrap'>
@@ -27,23 +40,13 @@
     </div>
 
     <div class = 'form-text-wrap'>
-      <label class = 'form-text'>Municipality</label>
-      <%= f.text_area :municipality, class:"company-input-default", id:"municipality", placeholder:"English Only" %>
-    </div>
-
-    <div class = 'form-text-wrap'>
-      <label class = 'form-text'>House Number</label>
-      <%= f.text_area :house_number, class:"company-input-default", id:"house-number", placeholder:"English Only" %>
-    </div>
-
-    <div class = 'form-text-wrap'>
-      <label class = 'form-text'>Building Name</label>
-      <%= f.text_area :building_name, class:"company-input-default", id:"building-name", placeholder:"English Only" %>
+      <label class = 'form-text'>Postal Code</label>
+      <%= f.text_area :postal_code, class:"company-input-default", id:"postal-code", placeholder:"123-4567" %>
     </div>
 
     <div class = 'form-text-wrap'>
       <label class = 'form-text'>Phone Number</label>
-      <%= f.text_area :phone_number, class:"company-input-default", id:"phone-number", placeholder:"English Only" %>
+      <%= f.text_area :phone_number, class:"company-input-default", id:"phone-number", placeholder:"1234567890" %>
     </div>
 
     <div class = 'form-text-wrap'>
