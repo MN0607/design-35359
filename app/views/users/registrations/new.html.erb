@@ -1,0 +1,52 @@
+<%= render "shared/header" %>
+
+<%# css...stylesheet/user/registration.css%>
+
+<%= form_with model: @user, url: user_registration_path, method: :post, class: 'registration-main', local: true do |f| %>
+<div class = 'form-wrap'>
+  <div class = 'form-left'>
+    <div class = 'title'>
+      <p>SIGN UP</p>
+    </div>
+  </div>
+
+  <div class = 'form-right'>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Nickname</label>
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"English Only", maxlength:"40" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>First Name</label>
+      <%= f.text_area :first_name, class:"input-default", id:"first-name", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Last Name</label>
+      <%= f.text_area :last_name, class:"input-default", id:"last-name", placeholder:"English Only" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Email</label>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC or Mobile" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Password</label>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"Please include both letters and numbers" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Password(2nd)</label>
+      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"Please confirm your password" %>
+    </div>
+
+    <div class='register-btn'>
+      <%= f.submit "Submit" ,class:"register-gray-btn" %>
+    </div>
+  </div>
+</div>
+<% end %>

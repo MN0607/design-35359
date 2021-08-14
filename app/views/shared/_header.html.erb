@@ -5,19 +5,25 @@
   </div>
   <div class = 'link-area'>
     <ul class = 'nickname-link'>
-      <li><%= link_to 'Current_user_nickname', "#", class: "user-nickname" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <% else %>
+        <div class = "user-nickname">
+          <p>RICE IS DESSERT</p>
+        </div>
+      <% end %>
     </ul>
     <ul class = 'list-link'>
       <li><%= link_to 'POST', "#", class: "post-list" %></li>
       <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
       <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
-      <li><%= link_to 'OPINION', "#", class: "opinion-list" %></li>
-      <%# if user_signed_in? %>
-        <%#= link_to 'SIGN OUT', '#', class: "log-out" %>
-      <%# else %>
-        <li><%= link_to 'LOG IN', '#', class: "log-in" %></li>
-        <li><%= link_to 'SIGN UP', '#', class: "sign-up" %></li>
-      <%# end %>
+      <% if user_signed_in? %>
+        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+      <% else %>
+        <li><%= link_to 'LOG IN', new_user_session_path, class: "log-in" %></li>
+        <li><%= link_to 'SIGN UP', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+      <li><%= link_to 'Co.page', index_co_designs_path, class: "co-list"%></li>
     </ul>
   </div>
 </header>
