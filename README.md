@@ -28,7 +28,6 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :company
 
 ## companies テーブル
 
@@ -46,7 +45,6 @@
 
 ### Association
 
-- has_one :design
 - has_one :room
 
 ## rooms テーブル

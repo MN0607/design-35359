@@ -1,0 +1,44 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @design, url: designs_path, method: :post, class: 'post-main', local: true do |f| %>
+<div class = 'form-wrap'>
+  <div class = 'form-left'>
+    <div class = 'title'>
+      <p>POST</p>
+    </div>
+  </div>
+
+  <div class = 'form-right'>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class = 'form-text-wrap'>
+      <div class = 'form-text'>Design</div>
+        <label class = design-image-btn>Click here!
+          <%= f.file_field :image, id:"design-image" %>
+        </label>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <div class = 'form-text'>Category</div>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"post-select-box", id:"post-category"}) %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Title</label>
+      <%= f.text_area :title, class:"input-default", id:"title", placeholder:"RiceIsDessert(2021)", maxlength:"40" %>
+    </div>
+
+    <div class = 'form-text-wrap'>
+      <label class = 'form-text'>Explanation</label>
+      <%= f.text_area :explanation, class:"input-default", id:"explanation", placeholder:"I am riceholic!!" %>
+    </div>
+
+    <div class='register-btn'>
+      <%= f.submit "Post" ,class:"register-gray-btn" %>
+    </div>
+
+
+  </div>
+</div>
+<%end%>

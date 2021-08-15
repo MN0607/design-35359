@@ -14,7 +14,7 @@
       <% end %>
     </ul>
     <ul class = 'list-link'>
-      <li><%= link_to 'POST', "#", class: "post-list" %></li>
+      <li><%= link_to 'POST', new_design_path, class: "post-list" %></li>
       <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
       <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
       <% if user_signed_in? %>
