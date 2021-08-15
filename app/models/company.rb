@@ -4,7 +4,6 @@ class Company < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :designs
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
