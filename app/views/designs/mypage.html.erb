@@ -1,0 +1,63 @@
+<%= render "shared/header" %>
+
+<div class = 'mypage-form-wrap'>
+  <div class = 'logo-area'>
+    <div class = 'mypage-form-left'>
+      <div class = 'title'>
+        <p>LOGO</p>
+      </div>
+    </div>
+    <div class = 'logo-form-right'>
+      <% @design1.each do |d| %>
+        <div class = 'mypage-logo-lists'>
+          <%#詳細表示ページへ%>
+          <%= link_to '#' do %> 
+            <div class='mypage-logo-left'>
+              <%= image_tag d.image, class: "mypage-logo-img" %>
+            </div>
+          <% end %>
+          <div class = 'mypage-logo-right'>
+            <div class = 'logo-title'>
+              <p class = 'text-btm'>
+                <%= d.title %>
+              </p>
+            </div>
+            <div class = 'logo-explanation'>
+              <%=safe_join(d.explanation.split("\n"),tag(:br))%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class = 'banner-area'>
+    <div class = 'banner-form-left'>
+      <div class = 'title'>
+        <p>BANNER</p>
+      </div>
+    </div>
+    <div class = 'banner-flex'>
+      <div class = 'banner-form-right'>
+        <% @design2.each do |d| %>
+          <div class = 'mypage-banner-lists'>
+            <%#詳細表示ページへ%>
+            <%= link_to '#' do %> 
+              <div class='mypage-banner-upper'>
+                <%= image_tag d.image, class: "mypage-banner-img" %>
+              </div>
+            <% end %>
+            <div class = 'mypage-banner-btm'>
+              <div class = 'banner-title'>
+                <%= d.title %>
+              </div>
+              <div class = 'banner-explanation'>
+                <%=safe_join(d.explanation.split("\n"),tag(:br))%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
