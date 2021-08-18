@@ -7,6 +7,12 @@ class DesignsController < ApplicationController
   def index_co
   end
 
+  def mypage
+    @user = current_user
+    @design1 = Design.where(user_id: @user.id, category_id: 2)
+    @design2 = Design.where(user_id: @user.id, category_id: 3)
+  end
+
   def new
     @design = Design.new
   end

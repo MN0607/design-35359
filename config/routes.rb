@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :companies, controllers: {
     sessions: "companies/sessions",
     passwords: 'companies/passwords',
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resources :designs, only: [:index, :new, :create] do
     collection do
       get 'index_co'
+      get 'mypage'
     end
   end
 end

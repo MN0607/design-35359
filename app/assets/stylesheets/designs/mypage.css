@@ -1,0 +1,105 @@
+.mypage-form-wrap {
+  width: 100vw;
+  padding: 7vh 0 5vh 4.5vw;
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+  background-color: #f8f8f8;
+}
+
+.mypage-form-left {
+  width: 24.5vw;
+
+}
+
+.logo-area {
+  display: flex;
+}
+
+.logo-form-right {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1vh;
+}
+
+.mypage-logo-lists {
+  height: 36vh;
+  width: 36vw;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.mypage-logo-img {
+  height: 36vh;
+  width: 36vh;
+}
+
+.mypage-logo-right {
+  height: 18vh;
+  width: 18vw;
+  padding: 0 32px 0 8px;
+}
+
+.logo-title {
+  height: 18vh;
+  position: relative;
+  border-bottom: 1px solid #D9D9D9;
+  font-size: 20px;
+  color: #BFBFBF;
+}
+
+.text-btm {
+  position: absolute;
+  bottom: 0;
+}
+
+.logo-explanation{
+  height: 18vh;
+  color: #D9D9D9;
+  font-size: 15px;
+  word-break: break-all;
+}
+
+
+.banner-area {
+  display: flex;
+  margin: 7vh 0 5vh 0 ;
+}
+
+.banner-form-left {
+  width: 24.7vw;
+}
+
+.banner-flex {
+  display: flex;
+}
+
+.banner-form-right {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1vh;
+}
+
+.mypage-banner-lists {
+  width: 36vw;
+  margin-bottom: 32px;
+}
+
+.mypage-banner-img {
+  width: 61vh;
+}
+
+.mypage-banner-btm {
+}
+
+.banner-title {
+  width: 13vw;
+  border-bottom: 1px solid #D9D9D9;
+  font-size: 20px;
+  color: #BFBFBF;
+}
+
+.banner-explanation {
+  width: 13vw;
+  color: #D9D9D9;
+  font-size: 15px;
+  word-break: break-all;
+}
