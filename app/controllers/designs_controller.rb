@@ -1,6 +1,6 @@
 class DesignsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :index_co]
-  before_action :get_design_params, only: [:show, :edit, :update]
+  before_action :get_design_params, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -40,6 +40,10 @@ class DesignsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    redirect_to mypage_designs_path if @design.destroy
   end
 
   private
