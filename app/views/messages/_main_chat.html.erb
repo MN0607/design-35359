@@ -1,0 +1,58 @@
+<div class="chat-header">
+  <div class="left-header">
+    <div class="header-title">
+      current-room-name
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%= link_to "Finish this chat", "#", class:'header-finish-btn'%>
+    </div>
+  </div>
+</div>
+
+<div class="messages">
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        current_user.name
+      </div>
+      <div class="message-date">
+        2020/3/31(Wed) 12:43:30(date)
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        good morning
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        current_user.name
+      </div>
+      <div class="message-date">
+        2020/3/31(Wed) 12:47:30(date)
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        good night
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form">
+  <%# formwithにて実装する %>
+  <div class="form-input">
+    <input class="form-message" placeholder= "type a message">
+    <label class="form-image">
+      <span class="image-file">Image</span>
+      <input type="file" class="hidden">
+    </label>
+  </div>
+  <input class="form-submit" type="submit" value="Send">
+</div>

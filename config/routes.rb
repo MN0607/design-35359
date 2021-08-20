@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/index'
   get 'users/show'
   devise_for :companies, controllers: {
     sessions: "companies/sessions",
@@ -21,4 +22,6 @@ Rails.application.routes.draw do
       get 'mypage'
     end
   end
+
+  resources :messages, only: [:index]
 end
