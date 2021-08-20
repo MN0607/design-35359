@@ -27,6 +27,10 @@ class DesignsController < ApplicationController
     end
   end
 
+  def show
+    @design = Design.find(params[:id])
+  end
+
   private
 
   def desgin_params

@@ -11,7 +11,7 @@
       <% @design1.each do |d| %>
         <div class = 'mypage-logo-lists'>
           <%#詳細表示ページへ%>
-          <%= link_to '#' do %> 
+          <%= link_to design_path(d.id), method: :get do %> 
             <div class='mypage-logo-left'>
               <%= image_tag d.image, class: "mypage-logo-img" %>
             </div>
@@ -42,7 +42,7 @@
         <% @design2.each do |d| %>
           <div class = 'mypage-banner-lists'>
             <%#詳細表示ページへ%>
-            <%= link_to '#' do %> 
+            <%= link_to design_path(d.id), method: :get do %> 
               <div class='mypage-banner-upper'>
                 <%= image_tag d.image, class: "mypage-banner-img" %>
               </div>

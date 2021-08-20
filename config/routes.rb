@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   root to: 'designs#index'
 
-  resources :designs, only: [:index, :new, :create] do
+  resources :designs, only: [:index, :new, :create, :show] do
     collection do
       get 'index_co'
       get 'mypage'
