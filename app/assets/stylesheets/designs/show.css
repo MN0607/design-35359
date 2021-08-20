@@ -1,0 +1,47 @@
+.detail-form-wrap {
+  width: 100vw;
+  padding: 7vh 0 5vh;
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+  background-color: #f8f8f8;
+}
+
+.detail-contents {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+
+.detail-image {
+  height: 50vh;
+}
+
+.detail-texts-btns {
+  padding-left: 8px;
+  margin-top:auto
+}
+
+.detail-btns {
+  text-align: center;
+}
+
+.detail-edit-btn {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  background-color: #D9D9D9;
+  font-size: 15px;
+  width: 13vw;
+  margin-top: 5px;
+}
+
+.detail-delete-btn {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(235, 78, 78);
+  font-size: 15px;
+  width: 13vw;
+  margin-top: 5px;
+}

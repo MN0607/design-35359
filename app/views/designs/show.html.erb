@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+
+<div class = 'detail-form-wrap'>
+  <div class = 'detail-contents'>
+    <div class = 'detail-image-area'>
+      <%= image_tag @design.image, class: "detail-image" %>
+    </div>
+
+    <div class = 'detail-texts-btns'>
+      <div class = 'detail-title-explanation'>
+        <div class = 'banner-title'>
+          <%=safe_join(@design.title.split("\n"),tag(:br))%>
+        </div>
+        <div class = 'banner-explanation'>
+          <%=safe_join(@design.explanation.split("\n"),tag(:br))%>
+        </div>
+      </div>
+
+      <% if user_signed_in? %>
+        <% if @design.user.id == current_user.id %>
+          <div class = 'detail-btns'>
+            <%= link_to "Edit", "#", class: "detail-edit-btn" %>
+            <%= link_to "Delete", "#", class:"detail-delete-btn" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
