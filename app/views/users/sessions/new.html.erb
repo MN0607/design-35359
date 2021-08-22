@@ -1,3 +1,12 @@
+<% if company_signed_in?%>
+  <%= render "shared/header" %>
+  <div class = 'cannot-user'>
+    <p>You cannot log in, because loged in as a company.</p>
+    <p>Please sign out.</p>
+  </div>
+
+<% elsif %>
+
 <%= render "shared/header" %>
 
 <%# css...stylesheet/user/registration.css%>
@@ -32,4 +41,6 @@
     </div>
   </div>
 </div>
+<% end %>
+
 <% end %>

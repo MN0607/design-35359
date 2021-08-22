@@ -1,3 +1,13 @@
+<%# userとしてlogin済の場合%>
+<% if user_signed_in?%>
+  <%= render "shared/second-header" %>
+  <div class = 'cannot-company'>
+    <p>You cannot sign up, because loged in as a user.</p>
+    <p>Please sign out.</p>
+  </div>
+
+<% elsif %>
+
 <%= render "shared/second-header" %>
 
 <%# css...stylesheet/user/registration.css%>
@@ -71,4 +81,6 @@
 
   </div>
 </div>
+<% end %>
+
 <% end %>

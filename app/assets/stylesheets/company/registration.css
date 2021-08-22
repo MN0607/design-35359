@@ -1,3 +1,12 @@
+.cannot-company {
+  width: 100vw;
+  padding-top: 12vh;
+  font-family: "Futura", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: #456181;
+}
+
 .company-form-wrap {
   width: 100vw;
   padding: 7vh 0 5vh 4.5vw;

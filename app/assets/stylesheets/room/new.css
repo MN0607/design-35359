@@ -1,0 +1,19 @@
+.cannot-create-chatroom {
+  width: 100vw;
+  padding-top: 12vh;
+  font-family: "Futura", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: #D9D9D9;
+}
+
+.chat-room-wrap {
+  width: 100vw;
+  padding: 7vh 0 5vh 4.5vw;
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+}
+
+.chat-room-form {
+  display: flex;
+}
+
