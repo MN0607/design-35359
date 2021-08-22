@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/index'
   get 'users/show'
   devise_for :companies, controllers: {
     sessions: "companies/sessions",
@@ -20,5 +21,9 @@ Rails.application.routes.draw do
       get 'index_co'
       get 'mypage'
     end
+  end
+
+  resources :rooms, only: [:new, :create, :index, :destroy] do
+    resources :messages, only: [:index, :create]
   end
 end

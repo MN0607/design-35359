@@ -1,0 +1,100 @@
+<%# user/company 共にloginしていない場合 %>
+<% unless user_signed_in? || company_signed_in? %>
+  <%= render "shared/header" %>
+  <div class = 'cannot-create-chatroom'>
+    <p>Please log in with the banner at the top. </p>
+    <p>If you are a company, click Co.page btn and log in. </p>
+  </div>
+<% end %>
+
+<%#userの場合%>
+<% if user_signed_in? %>
+  <%= render "shared/header" %>
+
+  <%=form_with model: @room, class: 'chat-room-main', local: true do |f|%>
+
+<div class = 'chat-room-wrap'>
+  <div class = 'chat-room-form'>
+
+    <div class = 'form-left'>
+      <div class = 'title'>
+        <p>Chat rooom</p>
+      </div>
+    </div>
+
+    <div class = 'form-right'>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class = 'form-text-wrap'>
+        <label class = 'form-text'>Room name</label>
+        <%= f.text_area :room_name, class:"input-default", id:"roomname", placeholder:"", maxlength:"40" %>
+      </div>
+
+      <div class = 'form-text-wrap'>
+        <label class = 'form-text'>Chat member</label>
+        <select name="room[company_id]" >
+          <option value="">Select member</option>
+          <% Company.all.each do |company| %>
+            <option value=<%= company.id %>><%= company.company_name %></option>
+          <% end %>
+        </select>
+        <input name="room[user_id]" type="hidden" value=<%= current_user.id %>>
+      </div>
+
+      <div class='register-btn'>
+       <%= f.submit "Create a room" ,class:"register-gray-btn" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+<%#companyの場合%>
+<% if company_signed_in? %>
+  <%= render "shared/second-header" %>
+
+  <%=form_with model: @room, class: 'chat-room-main', local: true do |f|%>
+
+<div class = 'chat-room-wrap'>
+  <div class = 'chat-room-form'>
+
+    <div class = 'company-form-left'>
+      <div class = 'company-title'>
+        <p>Chat rooom</p>
+      </div>
+    </div>
+
+    <div class = 'company-form-right'>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class = 'form-text-wrap'>
+        <label class = 'form-text'>Room name</label>
+        <%= f.text_area :room_name, class:"company-input-default", id:"roomname", placeholder:"", maxlength:"40" %>
+      </div>
+
+      <div class = 'form-text-wrap'>
+        <label class = 'form-text'>Chat member</label>
+        <select name="room[user_id]">
+          <option value="">Select member</option>
+          <% User.all.each do |user| %>
+            <option value=<%= user.id %>><%= user.nickname %></option>
+          <% end %>
+        </select>
+        <input name="room[company_id]" type="hidden" value=<%= current_company.id %>>
+      </div>
+
+      <div class='register-btn'>
+       <%= f.submit "Create a room" ,class:"register-navy-btn" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+

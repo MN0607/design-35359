@@ -13,7 +13,7 @@
 ### Association
 
 - has_many :designs
-- has_one :room
+- has_many :rooms
 
 ## designs テーブル
 
@@ -45,7 +45,7 @@
 
 ### Association
 
-- has_one :room
+- has_many :rooms
 
 ## rooms テーブル
 
@@ -67,6 +67,8 @@
 | ------- | ---------- | ------------------------------ |
 | content | string     | null: false                    |
 | room    | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| company | references | null: false, foreign_key: true |
 
 ### Association
 

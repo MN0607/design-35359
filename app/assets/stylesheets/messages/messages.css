@@ -1,0 +1,178 @@
+.wrapper {
+  display: flex;
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+  width: 100vw;
+}
+
+/*main-chat*/
+
+.main-chat {
+  width: 77.8vw;
+  height: 80vh;
+  background-color: #f8f8f8;
+}
+
+.chat-header {
+  height: 80px;
+  background-color: white;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 20px;
+}
+
+.header-finish-btn{
+  font-size: 20px;
+  text-decoration: none;
+  background-color: rgb(235, 78, 78);
+  color: white;
+  padding: 2px
+}
+
+.messages {
+  height: calc(80vh - 80px - 80px);
+  padding: 16px 16px;
+  overflow: scroll;
+}
+
+.message {
+  margin: 10px 0 0 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 20px;
+}
+
+.message-date {
+  color: #D9D9D9;
+  font-size: 15px;
+  padding: 5px 0 0 10px;
+}
+
+.lower-message {
+  margin: 10px 0 0 8px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.message-image {
+  height: 36vh;
+}
+
+.form {
+  background-color: white;
+  height: 80px;
+  padding: 16px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  display: flex;
+}
+
+.form-message {
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  height: 30px;
+  width: 56.8vw;
+  font-size: 20px;
+}
+
+.form-image {
+  border: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  font-size: 20px;
+  height: 30px;
+  width: 160px;
+  padding: 2px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.form-submit {
+  background-color: #D9D9D9;
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 160px;
+  height: 30px;
+
+  padding: 2px;
+}
+
+
+/*side-bar*/
+.side-bar {
+  width: 22.2vw;
+  height: 80vh;
+  background-color: #456181;
+}
+
+.side-bar-header {
+  height: 80px;
+  border-bottom: 1px solid white;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name {
+  font-size: 20px;
+}
+
+.chat-header-name {
+  color: white;
+  text-decoration: none;
+}
+
+.create-room {
+  font-size: 20px;
+
+}
+
+.create-room-btn {
+  padding: 2px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+.rooms {
+  height: calc(80vh - 80px);
+  padding: 0 16px;
+  overflow: scroll;
+}
+
+.room-name {
+  padding: 16px 0;
+}
+
+.chat-room-name {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.field_with_errors {
+  display: contents;
+}

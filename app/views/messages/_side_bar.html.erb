@@ -1,0 +1,35 @@
+<div class="side-bar-header">
+  <div class="header-name">
+    <% if user_signed_in?%>
+      <%= link_to current_user.nickname, mypage_designs_path, class:'chat-header-name'%>
+    <% end %>
+    <% if company_signed_in?%>
+      <%= link_to current_company.company_name, "#", class:'chat-header-name'%>
+    <% end %>
+  </div>
+  <div class="create-room">
+    <%= link_to "Create a room", new_room_path, class:'create-room-btn'%>
+  </div>
+</div>
+
+<div class="rooms">
+  <% if user_signed_in?%>
+    <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to room.room_name, room_messages_path(room), class: "chat-room-name"%>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if company_signed_in?%>
+    <% current_company.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <%= link_to room.room_name, room_messages_path(room), class: "chat-room-name" %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>

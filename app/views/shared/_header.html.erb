@@ -11,7 +11,7 @@
     </ul>
     <ul class = 'list-link'>
       <li><%= link_to 'POST', new_design_path, class: "post-list" %></li>
-      <li><%= link_to 'CHAT', "#", class: "chat-list" %></li>
+      <li><%= link_to 'CHAT', rooms_path, class: "chat-list" %></li>
       <li><%= link_to 'SEARCH', "#", class: "search-list" %></li>
       <% if user_signed_in? %>
         <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "log-out" %></li>

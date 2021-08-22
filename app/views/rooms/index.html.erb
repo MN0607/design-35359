@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <%= render "shared/header" %>
+<% end %>
+
+<% if company_signed_in? %>
+  <%= render "shared/second-header" %>
+<% end %>
+
+<div class='wrapper'>
+  <div class='side-bar'>
+    <%= render "messages/side_bar" %>
+  </div>
+</div>
