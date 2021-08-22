@@ -13,11 +13,23 @@
 </div>
 
 <div class="rooms">
-  <% current_user.rooms.each do |room| %>
+  <% if user_signed_in?%>
+    <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <%= link_to room.room_name, room_messages_path(room), class: "chat-room-name"%>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if company_signed_in?%>
+    <% current_company.rooms.each do |room| %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= room.room_name %></a>
+        <%= link_to room.room_name, room_messages_path(room), class: "chat-room-name" %>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>

@@ -1,58 +1,30 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
-      current-room-name
+      <%= @room.room_name %>
     </div>
   </div>
   <div class="right-header">
     <div class="header-button">
-      <%= link_to "Finish this chat", "#", class:'header-finish-btn'%>
+      <%= link_to "Finish this chat", room_path(@room), method: :delete, class:'header-finish-btn'%>
     </div>
   </div>
 </div>
 
 <div class="messages">
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        current_user.name
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30(date)
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        good morning
-      </div>
-    </div>
-  </div>
-
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        current_user.name
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:47:30(date)
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        good night
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
 <div class="form">
   <%# formwithにて実装する %>
-  <div class="form-input">
-    <input class="form-message" placeholder= "type a message">
-    <label class="form-image">
-      <span class="image-file">Image</span>
-      <input type="file" class="hidden">
-    </label>
-  </div>
-  <input class="form-submit" type="submit" value="Send">
+  <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+    <div class="form-input">
+      <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+      <label class="form-image">
+        <span class="image-file">Image</span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+    </div>
+    <%= f.submit 'Send', class: 'form-submit' %>
+  <% end %>
 </div>

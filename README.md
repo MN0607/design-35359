@@ -67,6 +67,8 @@
 | ------- | ---------- | ------------------------------ |
 | content | string     | null: false                    |
 | room    | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| company | references | null: false, foreign_key: true |
 
 ### Association
 

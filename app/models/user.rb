@@ -17,4 +17,5 @@ class User < ApplicationRecord
 
   has_many :designs
   has_many :rooms
+  has_many :messages
 end
