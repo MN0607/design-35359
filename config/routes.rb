@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     collection do
       get 'index_co'
       get 'mypage'
+      get 'search_index'
+      get 'search'
     end
   end
 

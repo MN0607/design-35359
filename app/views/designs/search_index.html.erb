@@ -1,0 +1,80 @@
+<%# user/company 共にloginしていない場合 %>
+<% unless user_signed_in? || company_signed_in? %>
+  <%= render "shared/header" %>
+  <div class = 'cannot-create-chatroom'>
+    <p>Please log in with the banner at the top. </p>
+    <p>If you are a company, click Co.page btn and log in. </p>
+  </div>
+<% end %>
+
+<%#userの場合%>
+<% if user_signed_in? %>
+<%= render "shared/header" %>
+
+<%= search_form_for @p, url: search_designs_path do |f| %>
+
+<div class = 'form-wrap'>
+  <div class = 'form-left'>
+    <div class = 'title'>
+      <p>SEARCH</p>
+    </div>
+  </div>
+
+  <div class = 'form-right'>
+
+  <%= f.label :category_id, 'Category', {class: 'form-text'} %>
+    <div class = 'search-select-box'>
+      <%= f.radio_button :category_id_eq, '2' %>
+      <p class = 'radio-btn-text'>Logo</p>
+    </div>
+    <div class = 'search-select-box'>
+      <%= f.radio_button :category_id_eq, '3' %>
+      <p class = 'radio-btn-text'>Banner</p>
+    </div>
+    <div class = 'search-select-text'>
+      When you do not choose any btns, we can show you all of them.
+    </div>
+  <div class='register-btn'>
+      <%= f.submit "Post" ,class:"register-gray-btn" %>
+  </div>
+
+  </div>
+</div>
+<% end %>
+<% end %>
+
+<%#companyの場合%>
+<% if company_signed_in? %>
+  <%= render "shared/second-header" %>
+
+  <%= search_form_for @p, url: search_designs_path do |f| %>
+
+<div class = 'company-form-wrap'>
+  <div class = 'company-form-left'>
+    <div class = 'company-title'>
+      <p>SEARCH</p>
+    </div>
+  </div>
+
+  <div class = 'company-form-right'>
+
+  <%= f.label :category_id, 'Category', {class: 'form-text'} %>
+    <div class = 'search-select-box'>
+      <%= f.radio_button :category_id_eq, '2' %>
+      <p class = 'company-radio-btn-text'>Logo</p>
+    </div>
+    <div class = 'search-select-box'>
+      <%= f.radio_button :category_id_eq, '3' %>
+      <p class = 'company-radio-btn-text'>Banner</p>
+    </div>
+    <div class = 'search-select-text'>
+      When you do not choose any btns, we can show you all of them.
+    </div>
+  <div class='register-btn'>
+      <%= f.submit "Post" ,class:"register-navy-btn" %>
+  </div>
+
+  </div>
+</div>
+<% end %>
+<% end %>
