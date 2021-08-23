@@ -1,0 +1,134 @@
+<%# user/company 共にloginしていない場合 %>
+<% unless user_signed_in? || company_signed_in? %>
+  <%= render "shared/header" %>
+  <div class = 'cannot-create-chatroom'>
+    <p>Please log in with the banner at the top. </p>
+    <p>If you are a company, click Co.page btn and log in. </p>
+  </div>
+<% end %>
+
+
+
+<% if user_signed_in? %>
+<%= render "shared/header" %>
+<div class = 'mypage-form-wrap'>
+  <div class = 'logo-area'>
+    <div class = 'mypage-form-left'>
+      <div class = 'title'>
+        <p>RESULTS</p>
+      </div>
+    </div>
+    <div class = 'logo-form-right'>
+      <% @results.each do |result| %>
+        <% if result.category_id == 2 %>
+          <div class = 'mypage-logo-lists'>
+            <%= link_to design_path(result.id), method: :get do %> 
+              <div class='mypage-logo-left'>
+                <%= image_tag result.image, class: "mypage-logo-img" %>
+              </div>
+            <% end %>
+            <div class = 'mypage-logo-right'>
+              <div class = 'logo-title'>
+                <p class = 'text-btm'>
+                  <%= result.title %>
+                  <%= result.user.nickname%>
+                </p>
+              </div>
+              <div class = 'logo-explanation'>
+                <%=safe_join(result.explanation.split("\n"),tag(:br))%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class = 'banner-flex'>
+      <div class = 'banner-form-right'>
+        <% @results.each do |result| %>
+          <% if result.category_id == 3 %>
+            <div class = 'mypage-banner-lists'>
+              <%= link_to design_path(result.id), method: :get do %> 
+                <div class='mypage-banner-uppper'>
+                  <%= image_tag result.image, class: "mypage-banner-img" %>
+                </div>
+              <% end %>
+              <div class = 'mypage-banner-btm'>
+                <div class = 'banner-title'>
+                  <%= result.title %>
+                  <%= result.user.nickname%>
+                </div>
+                <div class = 'banner-explanation'>
+                  <%=safe_join(result.explanation.split("\n"),tag(:br))%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<% if company_signed_in? %>
+<%= render "shared/second-header" %>
+<div class = 'company-mypage-form-wrap'>
+  <div class = 'logo-area'>
+    <div class = 'mypage-form-left'>
+      <div class = 'company-title'>
+        <p>RESULTS</p>
+      </div>
+    </div>
+
+    <div class = 'logo-form-right'>
+      <% @results.each do |result| %>
+        <% if result.category_id == 2 %>
+          <div class = 'mypage-logo-lists'>
+            <%= link_to design_path(result.id), method: :get do %> 
+              <div class='mypage-logo-left'>
+                <%= image_tag result.image, class: "mypage-logo-img" %>
+              </div>
+            <% end %>
+            <div class = 'mypage-logo-right'>
+              <div class = 'company-logo-title'>
+                <p class = 'text-btm'>
+                  <%= result.title %>
+                  <%= result.user.nickname%>
+                </p>
+              </div>
+              <div class = 'company-logo-explanation'>
+                <%=safe_join(result.explanation.split("\n"),tag(:br))%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class = 'banner-flex'>
+      <div class = 'banner-form-right'>
+        <% @results.each do |result| %>
+          <% if result.category_id == 3 %>
+            <div class = 'mypage-banner-lists'>
+              <%= link_to design_path(result.id), method: :get do %> 
+                <div class='mypage-banner-uppper'>
+                  <%= image_tag result.image, class: "mypage-banner-img" %>
+                </div>
+              <% end %>
+              <div class = 'mypage-banner-btm'>
+                <div class = 'company-banner-title'>
+                  <%= result.title %>
+                  <%= result.user.nickname%>
+                </div>
+                <div class = 'company-banner-explanation'>
+                  <%=safe_join(result.explanation.split("\n"),tag(:br))%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,35 @@
+.company-mypage-form-wrap {
+  width: 100vw;
+  padding: 7vh 0 5vh 4.5vw;
+  font-family: "Futura", "ヒラギノ角ゴシック", sans-serif;
+  background-color: #f6faff;
+}
+
+.company-logo-title {
+  height: 18vh;
+  position: relative;
+  border-bottom: 1px solid #7f95af;
+  font-size: 20px;
+  color: #456181;
+}
+
+.company-logo-explanation{
+  height: 18vh;
+  color: #7f95af;
+  font-size: 15px;
+  word-break: break-all;
+}
+
+.company-banner-title {
+  width: 13vw;
+  border-bottom: 1px solid #7f95af;
+  font-size: 20px;
+  color: #456181;
+}
+
+.company-banner-explanation {
+  width: 13vw;
+  color: #7f95af;
+  font-size: 15px;
+  word-break: break-all;
+}

@@ -1,6 +1,7 @@
 class DesignsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :index_co]
+  before_action :authenticate_user!, except: [:index, :index_co,:search_index, :search]
   before_action :get_design_params, only: [:show, :edit, :update, :destroy]
+  before_action :search_product, only: [:search_index, :search]
 
   def index
   end
@@ -46,6 +47,15 @@ class DesignsController < ApplicationController
     redirect_to mypage_designs_path if @design.destroy
   end
 
+  def search_index
+    @designs = Design.all
+    set_category_column
+  end
+
+  def search
+    @results = @p.result
+  end
+
   private
 
   def design_params
@@ -56,5 +66,12 @@ class DesignsController < ApplicationController
     @design = Design.find(params[:id])
   end
 
+  def search_product
+    @p = Design.ransack(params[:q])
+  end
+
+  def set_category_column
+    @category_name = Design.select("category_id").distinct
+  end
 
 end

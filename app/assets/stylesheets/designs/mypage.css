@@ -5,13 +5,13 @@
   background-color: #f8f8f8;
 }
 
-.mypage-form-left {
-  width: 24.5vw;
-
-}
-
 .logo-area {
   display: flex;
+  width: 100%;
+}
+
+.mypage-form-left {
+  width: 32.5vw;
 }
 
 .logo-form-right {
@@ -65,7 +65,7 @@
 }
 
 .banner-form-left {
-  width: 24.7vw;
+  width: 24.5vw;
 }
 
 .banner-flex {
