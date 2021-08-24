@@ -7,3 +7,7 @@
   background-color: rgb(74, 144, 248);
   text-decoration: none;
 }
+
+#design-image-edit {
+  display: none;
+}

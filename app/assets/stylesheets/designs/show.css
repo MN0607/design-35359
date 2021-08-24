@@ -13,6 +13,7 @@
 
 .detail-image {
   height: 50vh;
+  width: auto;
 }
 
 .detail-texts-btns {

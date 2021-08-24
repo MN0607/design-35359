@@ -6,20 +6,20 @@
   <div class = 'link-area'>
     <ul class = 'nickname-link'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, mypage_designs_path, class: "user-nickname" %></li>
+        <li><%= link_to current_user.nickname, mypage_designs_path, class: "list-elements" %></li>
       <% end %>
     </ul>
     <ul class = 'list-link'>
-      <li><%= link_to 'POST', new_design_path, class: "post-list" %></li>
-      <li><%= link_to 'CHAT', rooms_path, class: "chat-list" %></li>
-      <li><%= link_to 'SEARCH', search_index_designs_path, class: "search-list" %></li>
+      <li><%= link_to 'POST', new_design_path, class: "list-elements" %></li>
+      <li><%= link_to 'CHAT', rooms_path, class: "list-elements" %></li>
+      <li><%= link_to 'SEARCH', search_index_designs_path, class: "list-elements" %></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "log-out" %></li>
+        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "list-elements" %></li>
       <% else %>
-        <li><%= link_to 'LOG IN', new_user_session_path, class: "log-in" %></li>
-        <li><%= link_to 'SIGN UP', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'LOG IN', new_user_session_path, class: "list-elements" %></li>
+        <li><%= link_to 'SIGN UP', new_user_registration_path, class: "list-elements" %></li>
       <% end %>
-      <li><%= link_to 'Co.page', index_co_designs_path, class: "co-list"%></li>
+      <li><%= link_to 'Co.page', index_co_designs_path, class: "list-elements"%></li>
     </ul>
   </div>
 </header>

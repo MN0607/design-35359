@@ -5,19 +5,19 @@
   <div class = 'link-area'>
     <ul class = 'nickname-link'>
       <% if company_signed_in? %>
-        <li><%= link_to current_company.company_name, "#", class: "user-nickname" %></li>
+        <li><%= link_to current_company.company_name, "#", class: "co-list-elements" %></li>
       <% end %>
     </ul>
     <ul class = 'list-link'>
-      <li><%= link_to 'CHAT', rooms_path, class: "chat-list" %></li>
-      <li><%= link_to 'SEARCH', search_index_designs_path, class: "search-list" %></li>
+      <li><%= link_to 'CHAT', rooms_path, class: "co-list-elements" %></li>
+      <li><%= link_to 'SEARCH', search_index_designs_path, class: "co-list-elements" %></li>
       <% if company_signed_in? %>
-        <li><%= link_to 'SIGN OUT', destroy_company_session_path, method: :delete, class: "log-out" %></li>
+        <li><%= link_to 'SIGN OUT', destroy_company_session_path, method: :delete, class: "co-list-elements" %></li>
       <% else %>
-        <li><%= link_to 'LOG IN', new_company_session_path, class: "log-in" %></li>
-        <li><%= link_to 'SIGN UP', new_company_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'LOG IN', new_company_session_path, class: "co-list-elements" %></li>
+        <li><%= link_to 'SIGN UP', new_company_registration_path, class: "co-list-elements" %></li>
       <% end %>
-      <li><%= link_to 'Indiv.page', designs_path, class: "indiv-list"%></li>
+      <li><%= link_to 'Indiv.page', designs_path, class: "co-list-elements"%></li>
     </ul>
   </div>
 </header>

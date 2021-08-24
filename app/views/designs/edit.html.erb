@@ -4,7 +4,7 @@
 <div class = 'form-wrap'>
   <div class = 'form-left'>
     <div class = 'title'>
-      <p>POST</p>
+      <p>EDIT</p>
     </div>
   </div>
 
@@ -15,7 +15,7 @@
     <div class = 'form-text-wrap'>
       <div class = 'form-text'>Design</div>
         <label class = design-image-btn>Click here!
-          <%= f.file_field :image, id:"design-image" %>
+          <%= f.file_field :image, id:"design-image-edit" %>
         </label>
     </div>
 
@@ -38,6 +38,9 @@
       <%= f.submit "Post" ,class:"register-gray-btn" %>
       <%=link_to 'Back', design_path, method: :get, class:"back-blue-btn" %>
     </div>
+  </div>
+
+  <div class = 'preview' id = 'image-list-edit'>
   </div>
 </div>
 <%end%>
