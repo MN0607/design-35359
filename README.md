@@ -209,7 +209,7 @@ https://github.com/MN0607/design-35359
 ||||                                                                                                   |②トップページバナー ユーザー名クリック||
 ||||                                                                                                   |③カテゴリー別に表示。投稿物がなければ表示なし||
 ||||                                                                                                   |④画像クリックにより、詳細表示可能||
-|3                        |	チャット機能|ユーザーと企業のマッチング|user,companyが1対1でチャット可能             |①user/companyとしてログイン                     |20             |
+|3                        |	チャット機能|個人デザイナーと企業のマッチング|user,companyが1対1でチャット可能             |①user/companyとしてログイン                     |20             |
 |||                                                          |text,image共に送信可能                     |②トップページバナー「CHAT」ボタンクリック||
 ||||                                                                                                   |③左上の「Create a room」よりチャットルーム作成||
 ||||                                                                                                   |④下記、2項目入力により、チャットルーム作成||
@@ -231,12 +231,21 @@ https://github.com/MN0607/design-35359
 
 ### 特徴
 - user,company別にユーザー登録機能を実装
+  - こちらのURL(https://design-35359.herokuapp.com/users/sign_in)にアクセスするとご覧いただけます。
+  [![Image from Gyazo](https://i.gyazo.com/0b7340ff02b0a17d89d4e2a41f230210.png)](https://gyazo.com/0b7340ff02b0a17d89d4e2a41f230210)
+  - こちらのURL(https://design-35359.herokuapp.com/companies/sign_in)にアクセスするとご覧いただけます。
+  [![Image from Gyazo](https://i.gyazo.com/06105862dbaf7659b5e049f2a3ffe8d6.png)](https://gyazo.com/06105862dbaf7659b5e049f2a3ffe8d6)
   - deviseを用いて、2種類のユーザー登録を可能にしました。  
     これにより、個人デザイナーと企業のチャット機能実装が可能となりました。  
-    本実装については、テックキャンプのカリキュラムになく、WEB上での検索のみで行い、  
+    本実装については、テックキャンプのカリキュラムになく、独自にWEB上での検索/内容理解を行ったことにより、  
     課題解決力の向上に繋がりました。
+
 ### 工夫した点
 - user,companyの同時ログインを不可にしたこと
+  - userとしてログイン状態で、companyへログインする場合
+  [![Image from Gyazo](https://i.gyazo.com/e8a726d363418c677eb388dc02ae995b.gif)](https://gyazo.com/e8a726d363418c677eb388dc02ae995b)
+  - companyとしてログイン状態で、userへログインする場合
+  [![Image from Gyazo](https://i.gyazo.com/8ac781bf3b5881c045559b21df72f9f0.gif)](https://gyazo.com/8ac781bf3b5881c045559b21df72f9f0)
   - 同時ログインを防止することにより、アプリ内での予期せぬエラーの防止に努めました。  
     実際、同時ログイン不可の導入前、投稿機能でのエラーが発生したことがあります。  
     ログイン、サインアップ時に、バリデーションを設けることで、同時ログインを回避しています。
@@ -246,12 +255,15 @@ https://github.com/MN0607/design-35359
 
 ### 特徴
 - カテゴリー別投稿機能
+  - userログイン後、こちらのURL(https://design-35359.herokuapp.com/designs/new)にアクセスするとご覧いただけます。
+    [![Image from Gyazo](https://i.gyazo.com/61c72d29f8878d57a6c8a6612bcdf6b3.png)](https://gyazo.com/61c72d29f8878d57a6c8a6612bcdf6b3)
   - デザインサイズに最適なカテゴリーを選択可能です。  
-    また、各カテゴリー別のマイページ表示/検索機能の実装を可能としました。  
+    これによって、各カテゴリー別のマイページ表示/検索機能の実装を可能としました。  
     現状、LOGO,BANNERの2種類ですが、順次追加予定です。
 
 ### 工夫した点
 - プレビュー機能
+    [![Image from Gyazo](https://i.gyazo.com/fe312425e6a9397f175c7399fb1e660f.gif)](https://gyazo.com/fe312425e6a9397f175c7399fb1e660f)
   - 画像選択するとプレビューが表示され、  
     より適切なカテゴリー選択を可能とし、利便性の向上を意識しました。  
     現状、1回目の画像選択後、  
@@ -261,31 +273,54 @@ https://github.com/MN0607/design-35359
 
 ### 特徴
 - カテゴリー別の表示
+  - userログイン後、こちらのURL(https://design-35359.herokuapp.com/designs/mypage)にアクセスするとご覧いただけます。
+  [![Image from Gyazo](https://i.gyazo.com/b3c40f57085272f6bcda24b573851531.png)](https://gyazo.com/b3c40f57085272f6bcda24b573851531)
   - 投稿時に登録されたカテゴリー情報を用いて、投稿物の分類を行いました。  
-    これによって、マイページの統一感、投稿物の明確な分類を実現でき、  
+    これによって、ビューの統一感、明確な分類を実現でき、  
     ユーザーの使いやすさの向上を目指しました。
 
 ### 工夫した点
 - Explanationの枠サイズ
+  - (投稿機能のビュー)
+  [![Image from Gyazo](https://i.gyazo.com/61c72d29f8878d57a6c8a6612bcdf6b3.png)](https://gyazo.com/61c72d29f8878d57a6c8a6612bcdf6b3)
   - Explanationの枠サイズと投稿時のExplanationの枠サイズを同等にしました。  
-    投稿時と同じ見た目でマイページに表示することができ、  
-    投稿時と表示時のExplanationの見た目が異なることによる、  
+    投稿時と同じ見た目でマイページに表示することができることにより、
+    投稿時と表示時のExplanationの見た目の相違を防止し、  
     修正回数を減らすことができると考えています。
 
 ## チャット機能
 
 ### 特徴
 - 個人デザイナーと企業を繋ぐコンテンツ
-  - 
+  - ログイン後、こちらのURL(https://design-35359.herokuapp.com/rooms)にアクセスするとご覧いただけます。
+  [![Image from Gyazo](https://i.gyazo.com/a412b8d6a91eadef98acab9e390020ee.gif)](https://gyazo.com/a412b8d6a91eadef98acab9e390020ee)
+  - 本アプリの根幹となる機能です。  
+    個人デザイナーと企業が1対1でやり取りでき、具体的な案件の相談やアポイントに繋がり、  
+    より多くの個人デザイナーが世の中を笑顔にすることに貢献できると考えています。
 
 ### 工夫した点
+- 容易なチャットルームの切り替え
+[![Image from Gyazo](https://i.gyazo.com/df0b78ca8ab9bef9e5116e0e46bdf0d9.gif)](https://gyazo.com/df0b78ca8ab9bef9e5116e0e46bdf0d9)
+  - 左サイドバーに、現在使用中のチャットルームの一覧を表示しました。  
+    ワンクリックでチャットルームを変更でき、使いやすいシンプルな設計を目指しました。
+
 
 ## 検索機能
 
 ### 特徴
+- カテゴリー別検索機能
+  - ログイン後、こちらのURL(https://design-35359.herokuapp.com/designs/search_index)にアクセスするとご覧いただけます。
+  [![Image from Gyazo](https://i.gyazo.com/7d2912ef857ec0855eee9a61c39e74f3.gif)](https://gyazo.com/7d2912ef857ec0855eee9a61c39e74f3)
+  - 投稿時のカテゴリー情報を用いて、検索機能を実装しました。  
+    興味を持ったデザインの投稿者を一目で確認でき、  
+    チャットルーム作成時のRoom member選択時に役立つと考えています。
 
 ### 工夫した点
-
+- カテゴリー未選択時、全表示可能
+  [![Image from Gyazo](https://i.gyazo.com/812355a3ef885bb697c5e5eb5645f873.gif)](https://gyazo.com/812355a3ef885bb697c5e5eb5645f873)
+  - カテゴリー未選択の場合、検索結果を表示不可にするのではなく、  
+    全ての投稿物を一覧表示できるようにしました。  
+    その際、縦軸にカテゴリー別表示することで、見やすさの向上を意識しました。  
 
 
 
